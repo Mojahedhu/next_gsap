@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { dmSerifText, modernNegra, monaSans } from "./fonts";
+import GsapSetup from "@/shared/GsapSetup";
 
 export const metadata: Metadata = {
   title: "Juice App",
@@ -13,7 +14,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${dmSerifText.variable} ${monaSans.variable} ${modernNegra.variable} h-full antialiased`}
     >
-      <body>{children}</body>
+      <body>
+        <GsapSetup>{children}</GsapSetup>
+      </body>
     </html>
   );
 }
