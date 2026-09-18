@@ -46,7 +46,7 @@ function Hero() {
       .to(".left-leaf", { y: -200 }, 0);
 
     const startValue = isMobile ? "top 50%" : "center 60%";
-    const endValue = isMobile ? "120% top" : "bottom center";
+    const endValue = isMobile ? "120% top" : "bottom top";
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -69,7 +69,7 @@ function Hero() {
 
   return (
     <>
-      <section id="hero" className="noisy min-h-[120vh]">
+      <section id="hero" className="noisy">
         <h1 className="title">FREJUIC</h1>
 
         <Image

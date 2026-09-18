@@ -19,25 +19,25 @@ const navLinks = [
 
 const cocktailLists = [
   {
-    name: "Chapel Hill Shiraz",
+    name: "Tropical Paradise",
     country: "AU",
     detail: "Battle",
     price: "$10",
   },
   {
-    name: "Caten Malbee",
+    name: "Berry Medley",
     country: "AU",
     detail: "Battle",
     price: "$49",
   },
   {
-    name: "Rhino Pale Ale",
+    name: "Apple-Ginger Crisp",
     country: "CA",
     detail: "750 ml",
     price: "$20",
   },
   {
-    name: "Irish Guinness",
+    name: "Sweet Tart",
     country: "IE",
     detail: "600 ml",
     price: "$29",
