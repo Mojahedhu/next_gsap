@@ -3,8 +3,14 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import Image from "next/image";
+import { useRef } from "react";
+import { useMediaQuery } from "react-responsive";
 
 function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+
   useGSAP(() => {
     const heroSplit = new SplitText(".title", { type: "chars, words" });
     const paragraphSplit = new SplitText(".subtitle", { type: "lines" });
@@ -26,12 +32,46 @@ function Hero() {
       ease: "expo.out",
       delay: 1,
     });
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: "#hero",
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      })
+      .to(".right-leaf", { y: 200 }, 0)
+      .to(".left-leaf", { y: -200 }, 0);
+
+    const startValue = isMobile ? "top 50%" : "center 60%";
+    const endValue = isMobile ? "120% top" : "bottom center";
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "video",
+        start: startValue,
+        end: endValue,
+        scrub: true,
+        pin: true,
+      },
+    });
+
+    if (videoRef.current) {
+      videoRef.current.onloadedmetadata = () => {
+        tl.to(videoRef.current, {
+          currentTime: videoRef.current?.duration,
+        });
+      };
+    }
   }, []);
 
   return (
     <>
-      <section id="hero" className="noisy">
+      <section id="hero" className="noisy min-h-[120vh]">
         <h1 className="title">FREJUIC</h1>
+
         <Image
           src="/images/hero-left-leaf.png"
           width={266}
@@ -69,6 +109,14 @@ function Hero() {
           </div>
         </div>
       </section>
+      <div className="video">
+        <video
+          ref={videoRef}
+          src="/videos/output.mp4"
+          playsInline
+          preload="auto"
+        />
+      </div>
     </>
   );
 }

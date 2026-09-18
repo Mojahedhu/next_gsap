@@ -4,9 +4,10 @@ import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
-    <div className="land-scope">
+    <main className="land-scope">
       <Navbar />
       <Hero />
-    </div>
+      <div className="h-dvh"></div>
+    </main>
   );
 }
