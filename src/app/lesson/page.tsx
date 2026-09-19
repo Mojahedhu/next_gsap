@@ -49,29 +49,29 @@ const LessonHomePage = () => {
     <main className="container">
       <div className="flex flex-col">
         <h1 className="text-3xl font-bold text-zinc-50">GSAP Animations</h1>
-        <ol className="flex flex-col mt-10">
+        <ol className="mt-10 flex flex-col">
           {animations.map((animation, index) => (
             <li
               key={index}
-              className="flex flex-row gap-2 p-5 hover:bg-zinc-800/50 rounded-lg"
+              className="flex flex-row gap-2 rounded-lg p-5 hover:bg-zinc-800/50"
             >
               <p>
                 <span className="text-sm font-bold text-zinc-50">
                   {index + 1}.
                 </span>
               </p>
-              <div className="flex flex-col gap-2 flex-1">
+              <div className="flex flex-1 flex-col gap-2">
                 <Link
                   href={`lesson/${animation.path}`}
                   className="text-md font-semibold text-blue-600"
                 >
                   {animation.title}
                 </Link>
-                <p className="text-gray-400 text-xs">{animation.description}</p>
+                <p className="text-xs text-gray-400">{animation.description}</p>
               </div>
 
               <svg
-                className="size-6 text-gray-600 -rotate-90"
+                className="size-6 -rotate-90 text-gray-600"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >

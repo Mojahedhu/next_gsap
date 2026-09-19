@@ -46,7 +46,7 @@ function GsapFrom() {
       </p>
 
       <div className="mt-20">
-        <div id="green-box" className="w-20 h-20 bg-green-500 rounded-lg" />
+        <div id="green-box" className="h-20 w-20 rounded-lg bg-green-500" />
       </div>
     </main>
   );

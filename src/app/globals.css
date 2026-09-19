@@ -18,11 +18,11 @@ body {
 }
 
 @utility flex-center {
-  @apply flex justify-center items-center;
+  @apply flex items-center justify-center;
 }
 
 @utility col-center {
-  @apply flex flex-col justify-center items-center;
+  @apply flex flex-col items-center justify-center;
 }
 
 @utility abs-center {
@@ -54,6 +54,6 @@ body {
 
 @layer utilities {
   .container {
-    @apply mx-auto max-w-3xl ring-1 bg-zinc-900 ring-zinc-300/20 xl:max-w-5xl min-h-screen p-10;
+    @apply mx-auto min-h-screen max-w-3xl bg-zinc-900 p-10 ring-1 ring-zinc-300/20 xl:max-w-5xl;
   }
 }

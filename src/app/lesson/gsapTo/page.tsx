@@ -46,7 +46,7 @@ function GsapToPage() {
       </p>
 
       <div className="mt-20">
-        <div id="blue-box" className="w-20 h-20 bg-blue-500 rounded-lg" />
+        <div id="blue-box" className="h-20 w-20 rounded-lg bg-blue-500" />
       </div>
     </main>
   );

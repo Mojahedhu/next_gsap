@@ -58,13 +58,13 @@ function GsapScrollTrigger() {
         method.
       </p>
 
-      <div className="w-full h-[70vh] flex justify-center items-center flex-col">
+      <div className="flex h-[70vh] w-full flex-col items-center justify-center">
         <p className="text-center text-gray-500">
           Scroll down to see the animation
         </p>
 
         <svg
-          className="animate-bounce mt-5"
+          className="mt-5 animate-bounce"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
@@ -80,14 +80,14 @@ function GsapScrollTrigger() {
         </svg>
       </div>
 
-      <div ref={scrollRef} className="mt-20 w-full h-screen">
+      <div ref={scrollRef} className="mt-20 h-screen w-full">
         <div
           id="scroll-pink"
-          className="scroll-box w-20 h-20 rounded-lg bg-pink-500"
+          className="scroll-box h-20 w-20 rounded-lg bg-pink-500"
         />
         <div
           id="scroll-orange"
-          className="scroll-box w-20 h-20 rounded-lg bg-orange-500"
+          className="scroll-box h-20 w-20 rounded-lg bg-orange-500"
         />
       </div>
     </main>

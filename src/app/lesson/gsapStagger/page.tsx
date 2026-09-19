@@ -51,13 +51,13 @@ const GsapStagger = () => {
 
       <div className="mt-20">
         <div className="flex gap-5">
-          <div className="w-20 h-20 bg-indigo-200 rounded-lg stagger-box" />
-          <div className="w-20 h-20 bg-indigo-300 rounded-lg stagger-box" />
-          <div className="w-20 h-20 bg-indigo-400 rounded-lg stagger-box" />
-          <div className="w-20 h-20 bg-indigo-500 rounded-lg stagger-box" />
-          <div className="w-20 h-20 bg-indigo-600 rounded-lg stagger-box" />
-          <div className="w-20 h-20 bg-indigo-700 rounded-lg stagger-box" />
-          <div className="w-20 h-20 bg-indigo-800 rounded-lg stagger-box" />
+          <div className="stagger-box h-20 w-20 rounded-lg bg-indigo-200" />
+          <div className="stagger-box h-20 w-20 rounded-lg bg-indigo-300" />
+          <div className="stagger-box h-20 w-20 rounded-lg bg-indigo-400" />
+          <div className="stagger-box h-20 w-20 rounded-lg bg-indigo-500" />
+          <div className="stagger-box h-20 w-20 rounded-lg bg-indigo-600" />
+          <div className="stagger-box h-20 w-20 rounded-lg bg-indigo-700" />
+          <div className="stagger-box h-20 w-20 rounded-lg bg-indigo-800" />
         </div>
       </div>
       <div className="h-lvh"></div>

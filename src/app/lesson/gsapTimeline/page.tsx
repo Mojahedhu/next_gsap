@@ -93,7 +93,7 @@ function GsapTimeline() {
           Play/Pause
         </button>
 
-        <div id="yellow-box" className="w-20 h-20 bg-yellow-500 rounded-lg" />
+        <div id="yellow-box" className="h-20 w-20 rounded-lg bg-yellow-500" />
       </div>
     </main>
   );

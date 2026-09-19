@@ -3,7 +3,7 @@
 .lesson-scope {
   @layer components {
     code {
-      @apply font-mono text-sm bg-zinc-900 text-orange-400 p-1;
+      @apply bg-zinc-900 p-1 font-mono text-sm text-orange-400;
     }
 
     h1 {
@@ -11,7 +11,7 @@
     }
 
     main {
-      @apply mx-auto max-w-3xl ring-1 bg-zinc-900 ring-zinc-300/20 xl:max-w-5xl min-h-screen p-10;
+      @apply mx-auto min-h-screen max-w-3xl bg-zinc-900 p-10 ring-1 ring-zinc-300/20 xl:max-w-5xl;
     }
 
     a {
@@ -19,7 +19,7 @@
     }
 
     button {
-      @apply bg-slate-500 hover:bg-slate-600 text-zinc-50 px-4 py-2 rounded-md;
+      @apply rounded-md bg-slate-500 px-4 py-2 text-zinc-50 hover:bg-slate-600;
     }
   }
 }

@@ -58,7 +58,7 @@ function GsapFromTo() {
       </p>
 
       <div className="mt-20">
-        <div id="red-box" className="w-20 h-20 bg-red-500 rounded-lg" />
+        <div id="red-box" className="h-20 w-20 rounded-lg bg-red-500" />
       </div>
     </main>
   );
