@@ -2,6 +2,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { useRef } from "react";
 import { useMediaQuery } from "react-responsive";
@@ -48,22 +49,48 @@ function Hero() {
     const startValue = isMobile ? "top 50%" : "center 60%";
     const endValue = isMobile ? "120% top" : "bottom top";
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "video",
-        start: startValue,
-        end: endValue,
-        scrub: true,
-        pin: true,
-      },
-    });
+    // const tl = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: "video",
+    //     start: startValue,
+    //     end: endValue,
+    //     scrub: true,
+    //     pin: true,
+    //   },
+    // });
 
-    if (videoRef.current) {
-      videoRef.current.onloadedmetadata = () => {
-        tl.to(videoRef.current, {
-          currentTime: videoRef.current?.duration,
-        });
-      };
+    // if (videoRef.current) {
+    //   videoRef.current.onloadedmetadata = () => {
+    //     tl.to(videoRef.current, {
+    //       currentTime: videoRef.current?.duration,
+    //     });
+    //   };
+    // }
+    const video = videoRef.current;
+    const initVideoScroll = () => {
+      if (!video || !video.duration) return;
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: video,
+          start: startValue,
+          end: endValue,
+          scrub: 1, // Smooths seeking so it doesn't freeze/stutter
+          pin: true,
+        },
+      });
+      tl.to(video, {
+        currentTime: video.duration,
+        ease: "none",
+      });
+      // Recalculate ScrollTrigger positions now that duration is set
+      ScrollTrigger.refresh();
+    };
+    // If video metadata is already ready (from cache or fast load)
+    if (video && video.readyState >= 1) {
+      initVideoScroll();
+    } else if (video) {
+      // Otherwise wait for metadata to load
+      video.onloadedmetadata = initVideoScroll;
     }
   }, []);
 
@@ -74,6 +101,7 @@ function Hero() {
 
         <Image
           src="/images/hero-left-leaf.png"
+          loading="eager"
           width={266}
           height={461}
           unoptimized
@@ -114,7 +142,9 @@ function Hero() {
           ref={videoRef}
           src="/videos/output.mp4"
           playsInline
+          muted
           preload="auto"
+          // autoPlay
         />
       </div>
     </>
