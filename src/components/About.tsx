@@ -142,7 +142,7 @@ function About() {
                 </p>
               </div>
               <span ref={profileContainerRef} className="">
-                {Array(3)
+                {Array(4)
                   .fill("")
                   .map((_, i) => (
                     <span key={i} className={`h-10 w-10 overflow-hidden`}>
