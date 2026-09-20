@@ -4,9 +4,17 @@ import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import Image from "next/image";
 import { useRef } from "react";
+import { useMediaQuery } from "react-responsive";
 
 function About() {
   const profileContainerRef = useRef<HTMLDivElement>(null);
+
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+  const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
+  const start = isMobile ? "top 90%" : "top center";
+  const end = isTablet ? "bottom 180%" : "bottom bottom";
+
+  console.log("isMobile", isMobile);
 
   useGSAP(() => {
     const mm = gsap.matchMedia();
@@ -33,9 +41,10 @@ function About() {
     const timeLine = gsap.timeline({
       scrollTrigger: {
         trigger: "#about",
-        start: "top center",
-        end: "bottom bottom",
+        start,
+        end,
         scrub: true,
+        markers: true,
       },
     });
 
@@ -92,7 +101,7 @@ function About() {
           "<",
         );
     });
-    mm.add("(max-width: 1023px)", () => {
+    mm.add("(min-width: 768px) and (max-width: 1023px)", () => {
       timeLine
         .from(titleSplit.words, {
           opacity: 0,
@@ -109,13 +118,36 @@ function About() {
             ease: "power1.inOut",
             stagger: 0.04,
           },
+          "-=0.8",
+        );
+    });
+    mm.add("(max-width: 767px)", () => {
+      timeLine
+        .from(titleSplit.words, {
+          opacity: 0,
+          duration: 1,
+          yPercent: 100,
+          ease: "expo.out",
+          stagger: 0.02,
+        })
+        .from(
+          ".top-grid div, .bottom-grid div",
+          {
+            yPercent: 40,
+
+            rotate: (index) => (index % 2 === 0 ? 10 : -10),
+            opacity: 0.4,
+            duration: 1,
+            ease: "power1.inOut",
+            stagger: 0.04,
+          },
           "-=0.5",
         );
     });
   }, []);
   return (
     <div id="about">
-      <div className="mb-16 px-5 md:px-0">
+      <div className="mb-8 px-5 sm:mb-16 md:px-0">
         <div className="content">
           <div className="md:col-span-8">
             <p className="badge">Best Cocktails</p>
@@ -132,7 +164,7 @@ function About() {
               what turns a simple drink into something truly memorable.
             </p>
             <p className="text-white">{"⭐".repeat(5)}</p>
-            <div className="flex flex-row justify-items-start gap-0 sm:justify-between">
+            <div className="sm:flex sm:flex-row sm:justify-between">
               <div>
                 <p className="text-xl font-bold md:text-3xl">
                   <span>4.5</span>/5
