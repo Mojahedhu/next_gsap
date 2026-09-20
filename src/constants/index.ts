@@ -8,7 +8,7 @@ const navLinks = [
     title: "About Us",
   },
   {
-    id: "work",
+    id: "art",
     title: "The Art",
   },
   {
@@ -96,7 +96,7 @@ const featureLists = [
 const goodLists = [
   "Handpicked ingredients",
   "Signature techniques",
-  "Bartending artistry in action",
+  "Juice Bartending artistry in action",
   "Freshly muddled flavors",
 ];
 

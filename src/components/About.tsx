@@ -20,7 +20,7 @@ function About() {
           scrub: true,
           //   toggleActions: "play none none reverse", // Plays forward, reverses on scroll back
         },
-        xPercent: (index) => index * 50,
+        xPercent: (index) => index * 70,
         duration: 1,
         ease: "power1.inOut",
         stagger: 0.1,
@@ -131,7 +131,8 @@ function About() {
               detail — from the first muddle to the final garnish. That care is
               what turns a simple drink into something truly memorable.
             </p>
-            <div className="flex flex-row justify-between">
+            <p className="text-white">{"⭐".repeat(5)}</p>
+            <div className="flex flex-row justify-items-start gap-0 sm:justify-between">
               <div>
                 <p className="text-xl font-bold md:text-3xl">
                   <span>4.5</span>/5
