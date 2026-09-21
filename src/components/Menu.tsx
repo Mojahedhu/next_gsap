@@ -38,6 +38,7 @@ function Menu() {
         end: "bottom 80%",
         scrub: true,
       },
+      ease: "power1.inOut",
     });
     tl.fromTo(
       "#m-right-leaf",
@@ -45,7 +46,6 @@ function Menu() {
       {
         yPercent: 0,
         xPercent: 0,
-        ease: "power1.inOut",
       },
     ).fromTo(
       "#m-left-leaf",
@@ -53,7 +53,6 @@ function Menu() {
       {
         yPercent: 0,
         xPercent: 0,
-        ease: "power1.inOut",
       },
     );
   }, []);
