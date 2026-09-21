@@ -137,35 +137,35 @@ const socials = [
 const allCocktails = [
   {
     id: 1,
-    name: "Classic Mojito",
+    name: "Fresh Orange Juice",
     image: "/images/drink1.png",
-    title: "Simple Ingredients, Bold Flavor",
+    title: "100% Pure Citrus Sunshine",
     description:
-      "Made with tequila, lime juice, and orange liqueur, the Margarita is easy to make and full of character. Add a salted rim for the perfect drink on summer nights.",
+      "Naturally sweet and packed with Vitamin C. Made from freshly squeezed, ripe oranges with plenty of refreshing pulp.",
   },
   {
     id: 2,
-    name: "Raspberry Mojito",
+    name: "Watermelon Mint Juice",
     image: "/images/drink2.png",
-    title: "A Zesty Classic That Never Fails",
+    title: "The Ultimate Summer Hydration",
     description:
-      "The Margarita is a classic that balances tangy lime, smooth tequila, and a touch of sweetness. Shaken, frozen, or on the rocks—it’s always crisp & refreshing.",
+      "Crisp, sweet watermelon juice blended with a touch of fresh mint leaves. Incredibly refreshing and completely alcohol-free.",
   },
   {
     id: 3,
-    name: "Violet Breeze",
+    name: "Mango Passionfruit Blend",
     image: "/images/drink3.png",
-    title: "Simple Ingredients, Bold Flavor",
+    title: "A Sweet Tropical Escape",
     description:
-      "Made with tequila, lime juice, and orange liqueur, the Margarita is easy to make and full of character. Add a salted rim for the perfect drink on summer nights.",
+      "A thick, velvety blend of ripe tropical mangoes mixed with a tangy splash of fresh passionfruit juice.",
   },
   {
     id: 4,
-    name: "Curacao Mojito",
+    name: "Apple Ginger Zest",
     image: "/images/drink4.png",
-    title: "Crafted With Care, Poured With Love",
+    title: "Crisp Fruit with a Spicy Kick",
     description:
-      "Each cocktail is made with fresh ingredients and a passion for perfecting every pour, whether you're celebrating or simply relaxing.",
+      "Freshly pressed sweet red apples paired with a sharp, warming hint of organic ginger juice for a clean energy boost.",
   },
 ];
 

@@ -14,8 +14,6 @@ function About() {
   const start = isMobile ? "top 90%" : "top center";
   const end = isTablet ? "bottom 180%" : "bottom bottom";
 
-  console.log("isMobile", isMobile);
-
   useGSAP(() => {
     const mm = gsap.matchMedia();
     if (profileContainerRef.current) {
@@ -44,7 +42,7 @@ function About() {
         start,
         end,
         scrub: true,
-        markers: true,
+        // markers: true,
       },
     });
 
